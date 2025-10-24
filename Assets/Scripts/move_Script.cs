@@ -1,5 +1,5 @@
 using UnityEngine;
-using UnityEngine.InputSystem
+using UnityEngine.InputSystem;
 
 public class move_Script : MonoBehaviour
 {
@@ -12,8 +12,8 @@ public class move_Script : MonoBehaviour
     PlayerInput playerInput;
     void Start()
     {
-        moveForce 15f;
-        jumpForce 10f;
+        moveForce= 15f;
+        jumpForce =10f;
         rb = GetComponent<Rigidbody>();
         playerInput = GetComponent<PlayerInput>();
     }
@@ -21,7 +21,7 @@ public class move_Script : MonoBehaviour
     { 
         if (callbackContex.performed) 
         {
-            rb.AddForce(Vector3.up * jumpForce)
+            rb.AddForce(Vector3.up * jumpForce);
             Debug.Log("Saltando");
             Debug.Log(callbackContex.phase);
         }
