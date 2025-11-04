@@ -8,11 +8,14 @@ public class ClickToMove : MonoBehaviour
     Vector3 destination;
     [SerializeField] Transform destinoDumie;
     NavMeshAgent agent;
+    Animator animator;
     void Start()
     {
         rb = GetComponent<Rigidbody>();
         agent = GetComponent<NavMeshAgent>();
-        
+        animator = GetComponent<Animator>();
+
+        agent.updatePosition = false;
     }
     void Update()
     {
@@ -23,6 +26,7 @@ public class ClickToMove : MonoBehaviour
  
             HandleCkick();
         }
+        animator.SetFloat("ForwardMovement", agent.velocity.magnitude);
     }
 
     private void HandleCkick()
@@ -33,6 +37,12 @@ public class ClickToMove : MonoBehaviour
             destinoDumie.position = hit.point;
             agent.destination = destinoDumie.position;
         }
-        
+    }
+    private void OnAnimatorMove()
+    {
+        Vector3 position = animator.rootPosition;
+        position.y = agent.nextPosition.y;
+        transform.position = position;
+        agent.nextPosition = transform.position;
     }
 }
