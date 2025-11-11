@@ -9,7 +9,7 @@ public class ClickToMove : MonoBehaviour
     [SerializeField] Transform destinoDumie;
     NavMeshAgent agent;
     Animator animator;
-    void Start()
+    void OnEnable()
     {
         rb = GetComponent<Rigidbody>();
         agent = GetComponent<NavMeshAgent>();
@@ -25,6 +25,8 @@ public class ClickToMove : MonoBehaviour
         {
  
             HandleCkick();
+            Unit unit = GetComponent<Unit>();
+            unit.FinishMovement();
         }
         animator.SetFloat("ForwardMovement", agent.velocity.magnitude);
     }
