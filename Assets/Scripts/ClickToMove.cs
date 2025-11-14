@@ -6,7 +6,7 @@ public class ClickToMove : MonoBehaviour
 {
     Rigidbody rb;
     Vector3 destination;
-    [SerializeField] Transform destinoDumie;
+    [SerializeField] public Transform destinoDumie;
     NavMeshAgent agent;
     Animator animator;
     void OnEnable()

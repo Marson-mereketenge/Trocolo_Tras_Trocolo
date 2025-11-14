@@ -21,16 +21,17 @@ public class UISelectionTogle : MonoBehaviour
             case null:
                 for (int i = 0; i < elementsUIToToggle.Length; i++)
                 {
-                    elementsUIToToggle[i].SetActive(false);
                     deactivateALLUI();
                 }
                 break;
             case "Ellen":
+                deactivateALLUI();
                 if (elementsUIToToggle.Length > 0)
                     elementsUIToToggle[0].SetActive(true);
                 break;
 
             case "Chomper":
+                deactivateALLUI();
                 if (elementsUIToToggle.Length > 1)
                     elementsUIToToggle[1].SetActive(true);
                 break;
