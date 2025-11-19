@@ -11771,6 +11771,10 @@ PrefabInstance:
     - targetCorrespondingSourceObject: {fileID: 3235965575132758090, guid: 1c443c3abb862244aa6185fe28d5f5bb,
         type: 3}
       insertIndex: -1
+      addedObject: {fileID: 1148766493}
+    - targetCorrespondingSourceObject: {fileID: 3235965575132758090, guid: 1c443c3abb862244aa6185fe28d5f5bb,
+        type: 3}
+      insertIndex: -1
       addedObject: {fileID: 1148766492}
     - targetCorrespondingSourceObject: {fileID: 3235965575132761988, guid: 1c443c3abb862244aa6185fe28d5f5bb,
         type: 3}
@@ -13098,6 +13102,18 @@ CapsuleCollider:
   m_Height: 1.7739868
   m_Direction: 1
   m_Center: {x: 0, y: 0.82892466, z: 0}
+--- !u!114 &1148766493
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 1148766485}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 5b3d7152c9047db4b81d05ce4dc4e7e2, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: Assembly-CSharp::PlayerCharacter
 --- !u!1 &1157483245
 GameObject:
   m_ObjectHideFlags: 0
