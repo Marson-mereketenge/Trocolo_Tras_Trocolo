@@ -10,9 +10,12 @@ public class Unit : MonoBehaviour
     bool hasMoved = false;
     public bool isFriendly;
     ClickToMove clickTomove;
+    Shoting_Mechanics shooting;
+    GameObject targetSelection;
     public void Awake()//Esto es pa que no me deje clickar fuera de turno o al darle al play.
     {
         clickTomove = GetComponent<ClickToMove>();
+        shooting = GetComponent<Shoting_Mechanics>();
         clickTomove.enabled = false;
     }
     public void Run()
@@ -37,6 +40,16 @@ public class Unit : MonoBehaviour
         if (hasActed || hasAtacked)
         {
             return;
+        }
+
+        if (isFriendly)
+        {
+            shooting.enabled = true;
+            targetSelection.SetActive(true);
+        }
+        else
+        {
+            Debug.Log(characterName + "esta liandose a piñas malignas");
         }
         Debug.Log(characterName + "esta liandose a piñas"); 
         FinishAtack();
