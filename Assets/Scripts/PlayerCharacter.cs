@@ -8,15 +8,24 @@ public class PlayerCharacter : Character
     Weapon equipedWeapon;
     Equipment equipedEquipment;
     [SerializeField] List<Weapon> weaponList = new List<Weapon>();
-    [SerializeField] List<Equipment> equipmentList = new List<Equipment>();// Start is called once before the first execution of Update after the MonoBehaviour is created
+    [SerializeField] List<Equipment> equipmentList = new List<Equipment>();
     void Start()
     {
-        
+        equipedWeapon = weaponList[0];
+        equipedEquipment = equipmentList[0];
     }
-
-    // Update is called once per frame
+    
     void Update()
     {
         
+    }
+    void EarnExperience(float xpGain)
+    { 
+        experience += xpGain;
+    }
+
+    void LevelUp()
+    {
+        level++;
     }
 }
