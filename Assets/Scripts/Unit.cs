@@ -3,7 +3,7 @@ using UnityEngine;
 public class Unit : MonoBehaviour
 {
     [Header ("Propiedade di la Unitad")]
-    [SerializeField] string characterName;
+    [SerializeField] public string characterName;
 
     public bool hasActed = true;
     bool hasAtacked = false;
