@@ -6,8 +6,8 @@ public class Unit : MonoBehaviour
     [SerializeField] public string characterName;
 
     public bool hasActed = true;
-    bool hasAtacked = false;
-    bool hasMoved = false;
+    public bool hasAtacked = false;
+    public bool hasMoved = false;
     public bool isFriendly;
     ClickToMove clickTomove;
     Shoting_Mechanics shooting;
@@ -20,7 +20,7 @@ public class Unit : MonoBehaviour
     }
     public void Run()
     {
-        if (hasMoved || hasAtacked) //Aquí si uno de los dos ha ocurrido la funcion acaba.
+        if (hasMoved || hasActed) //Aquí si uno de los dos ha ocurrido la funcion acaba.
         {
             return;
         }
@@ -28,11 +28,11 @@ public class Unit : MonoBehaviour
         {
             clickTomove.enabled = true;
             clickTomove.destinoDumie.position = transform.position;
-            Debug.Log (characterName + "esta scouting.");
+            Debug.Log (characterName + " esta scouting.");
         }
         else 
         {
-            Debug.Log(characterName + "esta bailando salsa"); //Um firi fassendo barras
+            Debug.Log(characterName + " esta bailando salsa"); //Um firi fassendo barras
         }
     }
     public void Atack()
@@ -49,9 +49,9 @@ public class Unit : MonoBehaviour
         }
         else
         {
-            Debug.Log(characterName + "esta liandose a piñas malignas");
+            Debug.Log(characterName + " esta liandose a piñas malignas");
         }
-        Debug.Log(characterName + "esta liandose a piñas"); 
+        Debug.Log(characterName + " esta liandose a piñas"); 
         FinishAtack();
     }
     public void EndTurn()
@@ -60,7 +60,7 @@ public class Unit : MonoBehaviour
         {
             return;
         }
-        Debug.Log(characterName + "dice que ya no puede mas");
+        Debug.Log(characterName + " dice que ya no puede mas");
         FinishAction();
     }
     public void FinishMovement() 
@@ -70,7 +70,7 @@ public class Unit : MonoBehaviour
     }
     public void FinishAtack()
     {
-        hasActed = true;
+        hasAtacked = true;
     }
     public void FinishAction()
     {

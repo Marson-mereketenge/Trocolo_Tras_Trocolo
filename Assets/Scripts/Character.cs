@@ -19,7 +19,7 @@ public class Character : MonoBehaviour
         armorValue = 5f;
     }
 
-    void TakeDaage(float damageAmount)
+    void TakeDamage(float damageAmount)
     {
         float finalDamage = damageAmount - armorValue;
         currentHealth -= damageAmount;

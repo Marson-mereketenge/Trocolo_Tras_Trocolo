@@ -10,7 +10,6 @@ public class TurnManager : MonoBehaviour
     public List<Unit> enemyUnits = new List<Unit>();
     public List<Unit> friendlyUnits = new List<Unit>();
     public bool isFriendlyTurn = true;
-
     private void Awake()
     {
         Instance = this;
@@ -30,7 +29,7 @@ public class TurnManager : MonoBehaviour
         isFriendlyTurn = false;
         ResetUnits(enemyUnits);
         Debug.Log ("He empezado el turno enemigo");
-        StartCoroutine(EnemyTurnAutoPass());
+        
     }
     private void ResetUnits(List<Unit> units) //Devuelve a las unidades a sus estado base.
     {
@@ -54,7 +53,7 @@ public class TurnManager : MonoBehaviour
     {
         if (isFriendlyTurn)
         {
-            if(!AllUnitsActed (friendlyUnits))
+            if(!AllUnitsActed(friendlyUnits))
                 EnemyTurn();
         }
         else 
