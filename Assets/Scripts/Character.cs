@@ -22,7 +22,7 @@ public class Character : MonoBehaviour
     void TakeDamage(float damageAmount)
     {
         float finalDamage = damageAmount - armorValue;
-        currentHealth -= damageAmount;
+        currentHealth -= finalDamage;
         IsAlive();
     }
     void IsAlive()

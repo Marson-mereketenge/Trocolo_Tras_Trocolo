@@ -38,12 +38,12 @@ public class Enemy_AI : MonoBehaviour
         //1. buscar al FriendlyCharacter más cercano para atacarle
         Unit target = FindClosestFriendlyUnit();
         
-        if (target == null)// Si la IA no tiene enemigos, salta turno 
+        /*if (target == null)// Si la IA no tiene enemigos, salta turno 
         {
             Debug.Log(unit.characterName + "no ncesita chambear");
             unit.FinishAction();
             yield break;
-        }
+        }*/
 
         //2. comprobamos si está en la linea de vision de ataque y le ataco
         float distToTarget = Vector3.Distance(transform.position, target.transform.position);

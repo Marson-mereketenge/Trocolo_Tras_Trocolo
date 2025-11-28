@@ -1,7 +1,8 @@
 using System.Collections;
+using System.Collections.Generic;
 using UnityEngine;
 using UnityEngine.AI;
-
+[RequireComponent(typeof(NavMeshAgent))]
 public class ClickToMove : MonoBehaviour
 {
     Rigidbody rb;
@@ -16,6 +17,7 @@ public class ClickToMove : MonoBehaviour
         animator = GetComponent<Animator>();
 
         agent.updatePosition = false;
+        if (agent == null) Debug.LogError("NavMeshAgent requerido en ClickToMove");
     }
     void Update()
     {
