@@ -22,13 +22,13 @@ public class TurnManager : MonoBehaviour
     {
         isFriendlyTurn = true;
         ResetUnits(friendlyUnits);
-        Debug.Log ("He empezado el turno aliado");
+        Debug.Log ("Ha empezado el turno aliado");
     }
     private void EnemyTurn() //Inicia el turno de las unidades enemigas.
     {
         isFriendlyTurn = false;
         ResetUnits(enemyUnits);
-        Debug.Log ("He empezado el turno enemigo");
+        Debug.Log ("Ha empezado el turno enemigo");
         
     }
     private void ResetUnits(List<Unit> units) //Devuelve a las unidades a sus estado base.
@@ -53,12 +53,12 @@ public class TurnManager : MonoBehaviour
     {
         if (isFriendlyTurn)
         {
-            if(!AllUnitsActed(friendlyUnits))
+            if(AllUnitsActed(friendlyUnits))// si han actuado los aliados, empieza el turno enemigo
                 EnemyTurn();
         }
         else 
         {
-            if (!AllUnitsActed(enemyUnits))
+            if (AllUnitsActed(enemyUnits))// si toodos los enemigos han actuado, empieza el turno aliado
                 FriendlyTurn();
         }
     }

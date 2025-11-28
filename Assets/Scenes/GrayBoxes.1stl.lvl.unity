@@ -9433,6 +9433,10 @@ PrefabInstance:
         type: 3}
       insertIndex: -1
       addedObject: {fileID: 554288425}
+    - targetCorrespondingSourceObject: {fileID: 3830910435362079862, guid: 72c9dad2fd884694abb99b8dc561f15d,
+        type: 3}
+      insertIndex: -1
+      addedObject: {fileID: 554288427}
   m_SourcePrefab: {fileID: 100100000, guid: 72c9dad2fd884694abb99b8dc561f15d, type: 3}
 --- !u!4 &554288421 stripped
 Transform:
@@ -9499,6 +9503,19 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: Assembly-CSharp::Shoting_Mechanics
   particles: {fileID: 1005051516}
+--- !u!114 &554288427
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 554288422}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: ec74fd174443c2042a1e629ffb2922a1, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: Assembly-CSharp::Enemy_AI
+  visionRange: 15
 --- !u!1 &558911831
 GameObject:
   m_ObjectHideFlags: 0
@@ -9530,6 +9547,7 @@ MonoBehaviour:
   m_EditorClassIdentifier: Assembly-CSharp::TurnManager
   enemyUnits:
   - {fileID: 1402930316}
+  - {fileID: 554288424}
   friendlyUnits:
   - {fileID: 1148766491}
   - {fileID: 2116695984}
@@ -34467,6 +34485,19 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: Assembly-CSharp::Shoting_Mechanics
   particles: {fileID: 1005051516}
+--- !u!114 &1402930320
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 1095997382}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: ec74fd174443c2042a1e629ffb2922a1, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: Assembly-CSharp::Enemy_AI
+  visionRange: 15
 --- !u!1 &1420223378
 GameObject:
   m_ObjectHideFlags: 0
@@ -44869,6 +44900,10 @@ PrefabInstance:
         type: 3}
       insertIndex: -1
       addedObject: {fileID: 1402930318}
+    - targetCorrespondingSourceObject: {fileID: 3830910435362079862, guid: 72c9dad2fd884694abb99b8dc561f15d,
+        type: 3}
+      insertIndex: -1
+      addedObject: {fileID: 1402930320}
   m_SourcePrefab: {fileID: 100100000, guid: 72c9dad2fd884694abb99b8dc561f15d, type: 3}
 --- !u!1 &1902257011
 GameObject:
