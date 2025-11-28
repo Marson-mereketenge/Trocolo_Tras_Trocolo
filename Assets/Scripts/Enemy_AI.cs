@@ -20,7 +20,7 @@ public class Enemy_AI : MonoBehaviour
     }
     void Update()
     {
-        if (unit.isFriendly) //compruebo que la IA es anemiga
+        if (unit.isFriendly) //compruebo que la IA es enemiga
         {
             return;
         }
@@ -90,14 +90,14 @@ public class Enemy_AI : MonoBehaviour
     }
     private IEnumerator MovesTowardsTarget(Vector3 targetPosition)
     {
-        Debug.Log(unit.characterName + "está sambeando do Brasil hacia el enemigo");
+        Debug.Log(unit.characterName + " está sambeando do Brasil hacia el enemigo");
 
         agent.destination = targetPosition;
         yield return new WaitForSeconds(5); //Espera 5 segundo para simular el movimiento.
         unit.FinishMovement();
     }
 
-    private Unit/*aqui Unit quiere decir el tipo de cosa que estamos devolviendo*/ FindClosestFriendlyUnit() //calcula y devuelve que unidad es la más cercana para atacarla
+    private Unit FindClosestFriendlyUnit() //calcula y devuelve que unidad es la más cercana para atacarla /*aqui Unit quiere decir el tipo de cosa que estamos devolviendo*/ 
     {
         Unit closest = null;
         float closestDistance = Mathf.Infinity;
