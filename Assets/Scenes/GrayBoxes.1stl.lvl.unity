@@ -9437,6 +9437,14 @@ PrefabInstance:
         type: 3}
       insertIndex: -1
       addedObject: {fileID: 554288427}
+    - targetCorrespondingSourceObject: {fileID: 3830910435362079862, guid: 72c9dad2fd884694abb99b8dc561f15d,
+        type: 3}
+      insertIndex: -1
+      addedObject: {fileID: 554288429}
+    - targetCorrespondingSourceObject: {fileID: 3830910435362079862, guid: 72c9dad2fd884694abb99b8dc561f15d,
+        type: 3}
+      insertIndex: -1
+      addedObject: {fileID: 554288430}
   m_SourcePrefab: {fileID: 100100000, guid: 72c9dad2fd884694abb99b8dc561f15d, type: 3}
 --- !u!4 &554288421 stripped
 Transform:
@@ -9516,6 +9524,41 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: Assembly-CSharp::Enemy_AI
   visionRange: 15
+--- !u!114 &554288429
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 554288422}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 726f7e0828c56e943b68c99a10f2cc06, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: Assembly-CSharp::ClickToMove
+  destinoDumie: {fileID: 0}
+--- !u!195 &554288430
+NavMeshAgent:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 554288422}
+  m_Enabled: 1
+  m_AgentTypeID: 0
+  m_Radius: 0.5
+  m_Speed: 3.5
+  m_Acceleration: 8
+  avoidancePriority: 50
+  m_AngularSpeed: 120
+  m_StoppingDistance: 1
+  m_AutoTraverseOffMeshLink: 1
+  m_AutoBraking: 1
+  m_AutoRepath: 1
+  m_Height: 2
+  m_BaseOffset: 0
+  m_WalkableMask: 4294967295
+  m_ObstacleAvoidanceType: 4
 --- !u!1 &558911831
 GameObject:
   m_ObjectHideFlags: 0
@@ -17047,6 +17090,7 @@ MonoBehaviour:
   Target_1: {fileID: 1095997382}
   Target_2: {fileID: 554288422}
   characterShooting: {fileID: 1148766485}
+  weapon: {fileID: 11400000, guid: 4c6e01c877873874e85b2f5284af4962, type: 2}
 --- !u!1 &1005051513
 GameObject:
   m_ObjectHideFlags: 0
@@ -34498,6 +34542,41 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: Assembly-CSharp::Enemy_AI
   visionRange: 15
+--- !u!114 &1402930322
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 1095997382}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 726f7e0828c56e943b68c99a10f2cc06, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: Assembly-CSharp::ClickToMove
+  destinoDumie: {fileID: 0}
+--- !u!195 &1402930323
+NavMeshAgent:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 1095997382}
+  m_Enabled: 1
+  m_AgentTypeID: 0
+  m_Radius: 0.5
+  m_Speed: 3.5
+  m_Acceleration: 8
+  avoidancePriority: 50
+  m_AngularSpeed: 120
+  m_StoppingDistance: 1
+  m_AutoTraverseOffMeshLink: 1
+  m_AutoBraking: 1
+  m_AutoRepath: 1
+  m_Height: 2
+  m_BaseOffset: 0
+  m_WalkableMask: 4294967295
+  m_ObstacleAvoidanceType: 4
 --- !u!1 &1420223378
 GameObject:
   m_ObjectHideFlags: 0
@@ -44904,6 +44983,14 @@ PrefabInstance:
         type: 3}
       insertIndex: -1
       addedObject: {fileID: 1402930320}
+    - targetCorrespondingSourceObject: {fileID: 3830910435362079862, guid: 72c9dad2fd884694abb99b8dc561f15d,
+        type: 3}
+      insertIndex: -1
+      addedObject: {fileID: 1402930322}
+    - targetCorrespondingSourceObject: {fileID: 3830910435362079862, guid: 72c9dad2fd884694abb99b8dc561f15d,
+        type: 3}
+      insertIndex: -1
+      addedObject: {fileID: 1402930323}
   m_SourcePrefab: {fileID: 100100000, guid: 72c9dad2fd884694abb99b8dc561f15d, type: 3}
 --- !u!1 &1902257011
 GameObject:
@@ -46061,6 +46148,7 @@ MonoBehaviour:
   Target_1: {fileID: 1095997382}
   Target_2: {fileID: 554288422}
   characterShooting: {fileID: 720562622}
+  weapon: {fileID: 11400000, guid: 4c6e01c877873874e85b2f5284af4962, type: 2}
 --- !u!43 &1988915299
 Mesh:
   m_ObjectHideFlags: 0
