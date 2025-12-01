@@ -2,10 +2,22 @@ using System.Collections;
 using System.Collections.Generic;
 using UnityEngine;
 
+[RequireComponent(typeof(Collider))]
 public class Shoting_Mechanics : MonoBehaviour
 {
     [SerializeField] ParticleSystem particles;
+    [SerializeField] float shootDelay = 0.15f; //retardo para playear las vfx
     Unit unit;
+    private void Awake()
+    {
+        unit = GetComponent<Unit>();
+        if (particles == null)
+        {
+            Debug.LogWarning($"{name}: particles no asignado en Shoting_Mechanics");
+        }
+    }
+
+    // Intenta disparar al target. Se valida línea de visión y rango antes de aplicar efecto y notificar a la unidad.
     public void Shoot(Vector3 enemyPosition, float weaponRange)
     {
         if (IsOnLoS(enemyPosition, weaponRange))
