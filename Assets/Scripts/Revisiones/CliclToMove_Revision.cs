@@ -41,15 +41,24 @@ public class ClickToMove_Revision : MonoBehaviour
             {
                 return;
             }
-            Ray ray = Camera.main.ScreenPointToRay(Input.mousePosition);
+            HandleCkick();
+        }
+    }
+    private void HandleCkick()
+    {
+        Ray ray = Camera.main.ScreenPointToRay(Input.mousePosition);
             RaycastHit hit;
-            if (Physics.Raycast(ray, out hit))
+            if (Physics.Raycast(ray, out hit, 100f))
             { 
                 Vector3 destinationHit = hit.point;
+                if (destinationHit != null)
+                {
+                    destinoDumie.position = destinationHit;
+                }
+            /*StartCoroutine(Move(destinationHit));*/
             }
-        }
-
-        /*if (Input.GetMouseButtonDown(1))
+    }
+    /*if (Input.GetMouseButtonDown(1))
         {
 
             HandleCkick();
@@ -57,9 +66,7 @@ public class ClickToMove_Revision : MonoBehaviour
             unit.FinishMovement();
         }
         animator.SetFloat("ForwardMovement", agent.velocity.magnitude);*/
-    }
-
-    private void HandleCkick()
+    /*private void HandleCkick()
     {
         RaycastHit hit;
         if (Physics.Raycast(Camera.main.ScreenPointToRay(Input.mousePosition), out hit, 100f))
@@ -67,13 +74,14 @@ public class ClickToMove_Revision : MonoBehaviour
             destinoDumie.position = hit.point;
             agent.destination = destinoDumie.position;
         }
-    }
-    private void OnAnimatorMove()
+    }*/
+    /*private void OnAnimatorMove()
     {
         Vector3 position = animator.rootPosition;
         position.y = agent.nextPosition.y;
         transform.position = position;
         agent.nextPosition = transform.position;
-    }
+    }*/
+
 }
 

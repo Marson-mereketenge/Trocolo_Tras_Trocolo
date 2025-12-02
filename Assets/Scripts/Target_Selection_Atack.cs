@@ -2,7 +2,7 @@ using UnityEngine;
 
 public class Target_Selection_Atack : MonoBehaviour
 {
-    [SerializeField] GameObject Target_1;
+    /*[SerializeField] GameObject Target_1;
     [SerializeField] GameObject Target_2;
     [SerializeField] GameObject characterShooting;
     Shoting_Mechanics shoot;
@@ -18,5 +18,5 @@ public class Target_Selection_Atack : MonoBehaviour
     public void ShootTarget2()
     {
         shoot.Shoot(Target_2.transform.position, weapon.weaponRange);
-    }
+    }*/
 }
