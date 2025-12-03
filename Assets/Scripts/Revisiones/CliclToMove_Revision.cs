@@ -1,3 +1,4 @@
+using System;
 using System.Collections;
 using System.Collections.Generic;
 using UnityEngine;
@@ -47,41 +48,56 @@ public class ClickToMove_Revision : MonoBehaviour
     private void HandleCkick()
     {
         Ray ray = Camera.main.ScreenPointToRay(Input.mousePosition);
-            RaycastHit hit;
-            if (Physics.Raycast(ray, out hit, 100f))
-            { 
-                Vector3 destinationHit = hit.point;
-                if (destinationHit != null)
-                {
-                    destinoDumie.position = destinationHit;
-                }
-            /*StartCoroutine(Move(destinationHit));*/
-            }
-    }
-    /*if (Input.GetMouseButtonDown(1))
-        {
-
-            HandleCkick();
-            Unit unit = GetComponent<Unit>();
-            unit.FinishMovement();
-        }
-        animator.SetFloat("ForwardMovement", agent.velocity.magnitude);*/
-    /*private void HandleCkick()
-    {
         RaycastHit hit;
-        if (Physics.Raycast(Camera.main.ScreenPointToRay(Input.mousePosition), out hit, 100f))
+        if (Physics.Raycast(ray, out hit, 100f))
         {
-            destinoDumie.position = hit.point;
-            agent.destination = destinoDumie.position;
+            Vector3 destinationHit = hit.point;
+            if (destinationHit != null)
+            {
+                destinoDumie.position = destinationHit;
+            }
+            StartCoroutine(MoveAndEnd(destinationHit));
         }
-    }*/
-    /*private void OnAnimatorMove()
+    }
+    IEnumerator MoveAndEnd(Vector3 destinationHit)
     {
-        Vector3 position = animator.rootPosition;
-        position.y = agent.nextPosition.y;
-        transform.position = position;
-        agent.nextPosition = transform.position;
-    }*/
+        if (agent == null)
+        {
+            Debug.Log("Agente no inicializado en ClickToMove");
+            yield break;
+        }
+        agent.isStopped = false;
+        agent.SetDestination(destinationHit);
 
+        float timer = 0f;
+        while (agent.pathPending && timer < maxMoveWaitTime) //esperamos a que calcule el pathing
+        {
+            timer += Time.deltaTime;
+            yield return null;
+        }
+        while ((!agent.pathPending) && (agent.remainingDistance > agent.stoppingDistance + arrivalThreshold) 
+        && timer < maxMoveWaitTime)
+        {
+            timer += Time.deltaTime;
+            yield return null;
+        }
+        agent.isStopped = true;// detiene el agente
+
+        if (agent.hasPath == false || agent.remainingDistance <= agent.stoppingDistance + arrivalThreshold)
+        {
+            if (unit != null)
+            {
+                unit.FinishMovement();
+            }
+        }
+        else //esto por si no llega o por si se acaba el tiempo de llegada
+        {
+            Debug.Log($"{name}: no llego al destino");
+            if (unit != null)
+            {
+                unit.FinishMovement();
+            }
+        }
+    }    
 }
 

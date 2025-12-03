@@ -62,7 +62,7 @@ public class Shoting_Mechanics_Revision: MonoBehaviour
     {
         if (target == null)
         {
-            return false; 
+            return false;
         }
         Vector3 origin = transform.position + Vector3.up * 0.5f; /*con esto elevamos la posición de la linea de tiro para no dar en
         el suelo, en este caso Vector3.up = new Vector3 (0,1,0) (solo elevamos en el eje y) y es un vector normalizado*/
