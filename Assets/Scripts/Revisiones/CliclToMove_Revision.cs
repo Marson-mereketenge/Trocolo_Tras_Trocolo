@@ -59,7 +59,7 @@ public class ClickToMove_Revision : MonoBehaviour
             StartCoroutine(MoveAndEnd(destinationHit));
         }
     }
-    IEnumerator MoveAndEnd(Vector3 destinationHit)
+    public IEnumerator MoveAndEnd(Vector3 destinationHit)
     {
         if (agent == null)
         {
