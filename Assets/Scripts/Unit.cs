@@ -5,13 +5,13 @@ public class Unit : MonoBehaviour
     [Header ("Propiedade di la Unitad")]
     [SerializeField] public string characterName;
 
-    public bool hasActed = true;
+    public bool hasActed = false;
     public bool hasAtacked = false;
     public bool hasMoved = false;
     public bool isFriendly;
     ClickToMove clickTomove;
     Shoting_Mechanics shooting;
-    GameObject targetSelection;
+    GameObject targetSelection; 
     public void Awake()//Esto es pa que no me deje clickar fuera de turno o al darle al play.
     {
         clickTomove = GetComponent<ClickToMove>();
@@ -20,11 +20,11 @@ public class Unit : MonoBehaviour
     }
     public void Run()
     {
-        if (hasMoved || hasActed) //Aquí si uno de los dos ha ocurrido la funcion acaba.
+        if (hasMoved || hasActed) //Aquï¿½ si uno de los dos ha ocurrido la funcion acaba.
         {
             return;
         }
-        if (isFriendly) // Si es una unidad aliada, dejala moverse y cambiale la posición en el momento correcto.
+        if (isFriendly) // Si es una unidad aliada, dejala moverse y cambiale la posiciï¿½n en el momento correcto.
         {
             clickTomove.enabled = true;
             clickTomove.destinoDumie.position = transform.position;
@@ -41,7 +41,6 @@ public class Unit : MonoBehaviour
         {
             return;
         }
-
         if (isFriendly)
         {
             shooting.enabled = true;
@@ -49,11 +48,11 @@ public class Unit : MonoBehaviour
         }
         else
         {
-            Debug.Log(characterName + " esta liandose a piñas malignas");
+            Debug.Log(characterName + " esta liandose a piï¿½as malignas");
         }
-        Debug.Log(characterName + " esta liandose a piñas"); 
+        Debug.Log(characterName + " esta liandose a piï¿½as");
         FinishAtack();
-    }
+    } 
     public void EndTurn()
     {
         if (hasActed)
@@ -71,6 +70,7 @@ public class Unit : MonoBehaviour
     public void FinishAtack()
     {
         hasAtacked = true;
+        // Opcional: FinishAction(); // Si atacar termina el turno de la unidad, descomenta esto
     }
     public void FinishAction()
     {

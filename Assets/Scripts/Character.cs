@@ -2,10 +2,9 @@ using UnityEngine;
 
 public class Character : MonoBehaviour
 {
-    [Header("Characetr Main")]
+    [Header("Characetr Stats")]
     [SerializeField] string characterName;
     protected int level; //"protected" es una variable privada solo para los scripts que no hereden de esta clase
-    [Header("Character Stats")]
     float currentHealth;
     [SerializeField] float maxHealth;
     [SerializeField] float baseAtackDMG;

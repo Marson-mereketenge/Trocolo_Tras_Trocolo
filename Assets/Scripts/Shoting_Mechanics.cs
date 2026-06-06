@@ -17,7 +17,7 @@ public class Shoting_Mechanics : MonoBehaviour
         }
     }
 
-    // Intenta disparar al target. Se valida línea de visión y rango antes de aplicar efecto y notificar a la unidad.
+    // Intenta disparar al target. Se valida lï¿½nea de visiï¿½n y rango antes de aplicar efecto y notificar a la unidad.
     public void Shoot(Vector3 enemyPosition, float weaponRange)
     {
         if (IsOnLoS(enemyPosition, weaponRange))

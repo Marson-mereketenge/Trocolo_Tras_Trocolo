@@ -12,7 +12,7 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 7a5dc2e5ad4a65741a56b525e56a5dbf, type: 3}
   m_Name: Rifle_de_Asalto
   m_EditorClassIdentifier: Assembly-CSharp::Weapon
-  weaponRange: 10
-  weaponDamage: 5
+  range: 10
+  damage: 4
   magazineCapacity: 25
   maxAmmo: 4

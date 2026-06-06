@@ -2,7 +2,7 @@ using UnityEngine;
 
 public class Target_Selection_Atack : MonoBehaviour
 {
-    /*[SerializeField] GameObject Target_1;
+    [SerializeField] GameObject Target_1;
     [SerializeField] GameObject Target_2;
     [SerializeField] GameObject characterShooting;
     Shoting_Mechanics shoot;
@@ -13,10 +13,10 @@ public class Target_Selection_Atack : MonoBehaviour
     }
     public void ShootTarget1()
     {
-        shoot.Shoot(Target_1.transform.position, weapon.weaponRange);
+        shoot.Shoot(Target_1.transform.position, weapon.range);
     }
     public void ShootTarget2()
     {
-        shoot.Shoot(Target_2.transform.position, weapon.weaponRange);
-    }*/
+        shoot.Shoot(Target_2.transform.position, weapon.range);
+    }
 }
