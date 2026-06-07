@@ -20,16 +20,15 @@ public class TurnManager : MonoBehaviour
     }
     private void FriendlyTurn() //Inicia el turno de las unidades aliadas.
     {
+        Debug.Log ("Ha empezado el turno aliado");
         isFriendlyTurn = true;
         ResetUnits(friendlyUnits);
-        Debug.Log ("Ha empezado el turno aliado");
     }
     private void EnemyTurn() //Inicia el turno de las unidades enemigas.
     {
+        Debug.Log ("Ha empezado el turno enemigo");
         isFriendlyTurn = false;
         ResetUnits(enemyUnits);
-        Debug.Log ("Ha empezado el turno enemigo");
-        
     }
     private void ResetUnits(List<Unit> units) //Devuelve a las unidades a sus estado base.
     {

@@ -11,7 +11,9 @@ public class Unit : MonoBehaviour
     public bool isFriendly;
     ClickToMove clickTomove;
     Shoting_Mechanics shooting;
-    GameObject targetSelection; 
+    //GameObject targetSelection; 
+    [SerializeField] private Target_Selection_Atack referencia;
+    Target_Selection_Atack ShootTarget;
     public void Awake()//Esto es pa que no me deje clickar fuera de turno o al darle al play.
     {
         clickTomove = GetComponent<ClickToMove>();
@@ -20,10 +22,6 @@ public class Unit : MonoBehaviour
     }
     public void Run()
     {
-        if (hasMoved || hasActed) //Aqu� si uno de los dos ha ocurrido la funcion acaba.
-        {
-            return;
-        }
         if (isFriendly) // Si es una unidad aliada, dejala moverse y cambiale la posici�n en el momento correcto.
         {
             clickTomove.enabled = true;
@@ -34,8 +32,12 @@ public class Unit : MonoBehaviour
         {
             Debug.Log(characterName + " esta bailando salsa"); //Um firi fassendo barras
         }
+        if (hasMoved || hasActed) //Aqu� si uno de los dos ha ocurrido la funcion acaba.
+        {
+            return;
+        }
     }
-    public void Atack()
+    /*public void Atack()
     {
         if (hasActed || hasAtacked)
         {
@@ -49,6 +51,42 @@ public class Unit : MonoBehaviour
         else
         {
             Debug.Log(characterName + " esta liandose a pi�as malignas");
+        }
+        Debug.Log(characterName + " esta liandose a pi�as");
+        FinishAtack();
+    }*/
+    public void AtackObjctive1()
+    {
+        if (hasActed || hasAtacked)
+        {
+            return;
+        }
+        if (isFriendly && referencia != null)
+        {
+            shooting.enabled = true;
+            ShootTarget = ShootTarget1;
+        }
+        else
+        {
+            Debug.Log ("Olvidates arrastrar el xcript TSAtack al inspector o la unidad no es Friendly");
+        }
+        Debug.Log(characterName + " esta liandose a pi�as");
+        FinishAtack();
+    }
+    public void AtackObjctive2()
+    {
+        if (hasActed || hasAtacked)
+        {
+            return;
+        }
+        if (isFriendly && referencia != null)
+        {
+            shooting.enabled = true;
+            ShootTarget = ShootTarget2;
+        }
+        else
+        {
+            Debug.Log ("Olvidates arrastrar el xcript TSAtack al inspector o la unidad no es Friendly");
         }
         Debug.Log(characterName + " esta liandose a pi�as");
         FinishAtack();
@@ -70,7 +108,6 @@ public class Unit : MonoBehaviour
     public void FinishAtack()
     {
         hasAtacked = true;
-        // Opcional: FinishAction(); // Si atacar termina el turno de la unidad, descomenta esto
     }
     public void FinishAction()
     {

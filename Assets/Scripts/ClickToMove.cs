@@ -10,6 +10,7 @@ public class ClickToMove : MonoBehaviour
     [SerializeField] public Transform destinoDumie;
     NavMeshAgent agent;
     Animator animator;
+    public bool cuidaoquememuevo;
     void OnEnable()
     {
         rb = GetComponent<Rigidbody>();
@@ -48,5 +49,17 @@ public class ClickToMove : MonoBehaviour
         position.y = agent.nextPosition.y;
         transform.position = position;
         agent.nextPosition = transform.position;
+    }
+    IEnumerator CheckMovementVelocity()
+    {
+        yield return new WaitForSeconds(0.02f);
+        
+        if(agent.velocity == Vector3.zero)
+        {
+            Debug.Log("He llegao manin");
+            Unit unit = GetComponent<Unit>();
+            unit.FinishMovement();
+            cuidaoquememuevo = false;
+        }
     }
 }
